@@ -1,33 +1,32 @@
-# Assignment 10.1 - Player Serialization
+# Assignment 10.1 - Serialization and LeetCode 22
 
-> A C# console application that demonstrates how to create a user-defined class and serialize and deserialize objects using **JSON** and **XML**.
+> A C# assignment repository that demonstrates object serialization with **JSON** and **XML**, along with a backtracking solution to **LeetCode 22: Generate Parentheses**.
 
 ---
 
 ## Overview
 
-This project was created for **Assignment 10.1**. The goal was to build a user-defined class with three properties and demonstrate how object data can be serialized and deserialized using multiple file formats.
+This repository contains my work for **Assignment 10.1**, organized into two questions that focus on different C# and software engineering concepts.
 
-In this project, I created a `Player` class and used a list of basketball players to demonstrate:
+- **Question 1:** Create a user-defined class and serialize and deserialize data using JSON and XML
+- **Question 2:** Solve LeetCode 22, **Generate Parentheses**, using recursion and backtracking
 
-- JSON serialization and deserialization
-- XML serialization and deserialization
-- File creation and file reading in C#
-- Round-trip validation by printing restored data back to the console
+Together, these two questions demonstrate both practical file-handling skills and algorithmic problem-solving.
 
 ---
 
-## Why this project matters
+## Why this assignment matters
 
-This assignment reinforces several important C# concepts that show up often in backend and application development:
+This assignment helped reinforce several important concepts that show up often in backend and application development:
 
 - Creating custom classes
-- Working with collections of objects
+- Working with object collections
 - Using built-in serializers
 - Reading from and writing to files
-- Verifying that stored data can be restored correctly
+- Understanding recursion and backtracking
+- Explaining technical logic clearly in documentation
 
-It also helped strengthen my ability to explain program flow clearly and document technical work in a more professional format [cite:11].
+It also helped me present coursework in a more professional GitHub-ready format.
 
 ---
 
@@ -38,25 +37,48 @@ It also helped strengthen my ability to explain program flow clearly and documen
 - **Serialization Libraries:**
   - `System.Text.Json`
   - `System.Xml.Serialization`
+- **Concepts Used:**
+  - Object modeling
+  - File handling
+  - Serialization and deserialization
+  - Recursion
+  - Backtracking
 - **IDE:** Visual Studio
-- **Version Control:** Git
+- **Version Control:** Git / GitHub
 
 ---
 
 ## Project Structure
 
 ```text
-Rovy Assignment List Serialization (Json & XML)/
+Assignment-10.1/
 ├── README.md
-├── Program.cs
-├── Player.cs
-├── Rovy Assignment List Serialization (Json & XML).csproj
+├── Question1-Serialization/
+│   ├── Program.cs
+│   ├── Player.cs
+│   └── Question1-Serialization.csproj
+├── Question2-GenerateParentheses/
+│   ├── Program.cs
+│   └── Question2-GenerateParentheses.csproj
 └── Properties/
 ```
 
 ---
 
-## Player Class
+## Repository Contents
+
+| Question | Topic | Description |
+|---|---|---|
+| Question 1 | Serialization | Creates a custom `Player` class and demonstrates JSON and XML serialization/deserialization |
+| Question 2 | LeetCode 22 | Generates all valid parentheses combinations using recursion and backtracking |
+
+---
+
+## Question 1 - Player Serialization
+
+Question 1 focuses on creating a user-defined `Player` class with three properties and demonstrating how object data can be serialized and deserialized using multiple file formats.
+
+### Player Class
 
 This project uses a custom `Player` class with three properties:
 
@@ -77,13 +99,11 @@ public class Player
 }
 ```
 
----
-
-## Program Workflow
+### Question 1 Workflow
 
 ```mermaid
 flowchart TD
-    A[Start Program] --> B[Create C:\Files directory]
+    A[Start Program] --> B[Create Files directory]
     B --> C[Create List of Player objects]
     C --> D[Serialize list to JSON]
     D --> E[Deserialize JSON into List<Player>]
@@ -94,9 +114,7 @@ flowchart TD
     I --> J[Wait for key press and exit]
 ```
 
----
-
-## Serialization Flow
+### Serialization Flow
 
 ```mermaid
 sequenceDiagram
@@ -115,13 +133,11 @@ sequenceDiagram
     Program->>Program: Print final output
 ```
 
----
+### Whiteboard Explanation
 
-## Whiteboard Explanation
+If I had to explain Question 1 on a whiteboard, I would break it down into four simple steps.
 
-If this project had to be explained on a whiteboard, the process would break down into four simple steps.
-
-### Step 1: Create the data
+#### Step 1: Create the data
 
 A custom `Player` class is created with three properties:
 
@@ -131,7 +147,7 @@ A custom `Player` class is created with three properties:
 
 A list of `Player` objects is then populated with sample data.
 
-### Step 2: Serialize the list
+#### Step 2: Serialize the list
 
 Serialization means converting objects in memory into a format that can be stored in a file.
 
@@ -140,7 +156,7 @@ In this application:
 - JSON serialization writes the player list to a `.json` file
 - XML serialization writes the player list to a `.xml` file
 
-### Step 3: Deserialize the list
+#### Step 3: Deserialize the list
 
 Deserialization means reading stored file data and turning it back into C# objects.
 
@@ -149,14 +165,14 @@ In this project:
 - The JSON file is read back into a `List<Player>`
 - The XML file is read back into a `List<Player>`
 
-### Step 4: Verify the round trip
+#### Step 4: Verify the round trip
 
 To confirm the process worked correctly:
 
 - The deserialized players are printed to the console
 - The raw XML content is displayed for inspection
 
-### Simple diagram
+### Simple Diagram
 
 ```mermaid
 flowchart LR
@@ -171,9 +187,7 @@ That full round trip is:
 
 **object -> file -> object again**
 
----
-
-## JSON Process
+### JSON Process
 
 The JSON portion of the program follows these steps:
 
@@ -184,9 +198,7 @@ The JSON portion of the program follows these steps:
 5. Deserialize the file back into a `List<Player>`.
 6. Print each restored player to the console.
 
----
-
-## XML Process
+### XML Process
 
 The XML portion of the program follows these steps:
 
@@ -198,9 +210,7 @@ The XML portion of the program follows these steps:
 6. Print each restored player to the console.
 7. Read and display the raw XML text.
 
----
-
-## Example Console Output
+### Example Console Output
 
 ```text
 --- JSON Serialization ---
@@ -228,22 +238,257 @@ Michael Jordan - Chicago Bulls - 33.4
 
 ---
 
+## Question 2 - LeetCode 22: Generate Parentheses
+
+Question 2 focuses on solving the classic **Generate Parentheses** problem using recursion and backtracking.
+
+### Problem Statement
+
+Given `n` pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+### Example 1
+
+```text
+Input: n = 3
+Output: ["((()))","(()())","(())()","()(())","()()()"]
+```
+
+### Example 2
+
+```text
+Input: n = 1
+Output: ["()"]
+```
+
+### Solution Code
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class Solution
+{
+    public IList<string> GenerateParenthesis(int n)
+    {
+        var result = new List<string>();
+        Backtrack(result, "", 0, 0, n);
+        return result;
+    }
+
+    private void Backtrack(List<string> result, string current, int openCount, int closeCount, int n)
+    {
+        if (current.Length == 2 * n)
+        {
+            result.Add(current);
+            return;
+        }
+
+        if (openCount < n)
+        {
+            Backtrack(result, current + "(", openCount + 1, closeCount, n);
+        }
+
+        if (closeCount < openCount)
+        {
+            Backtrack(result, current + ")", openCount, closeCount + 1, n);
+        }
+    }
+}
+```
+
+### Core Idea
+
+The solution builds the string one character at a time.
+
+At every step:
+
+- add `"("` if `openCount < n`
+- add `")"` only if `closeCount < openCount`
+- once the string length becomes `2 * n`, add it to the result list
+
+This ensures that invalid combinations are never explored.
+
+### Question 2 Workflow
+
+```mermaid
+flowchart TD
+    A[Start with empty string<br/>openCount = 0<br/>closeCount = 0] --> B[Backtrack current state]
+    B --> C{current.Length == 2 * n?}
+    C -- Yes --> D[Add current string to result and return]
+    C -- No --> E{openCount < n?}
+    E -- Yes --> F[Branch: add open parenthesis]
+    F --> B
+    E -- No --> G{closeCount < openCount?}
+    G -- Yes --> H[Branch: add closing parenthesis]
+    H --> B
+    G -- No --> I[Return]
+```
+
+### Decision Rules
+
+The recursive function keeps track of three pieces of state:
+
+- `current` -> the string being built
+- `openCount` -> how many opening parentheses have been used
+- `closeCount` -> how many closing parentheses have been used
+
+From any recursive state, there are only two legal moves:
+
+1. Add `"("` if `openCount < n`
+2. Add `")"` if `closeCount < openCount`
+
+These rules guarantee that the algorithm only explores valid paths.
+
+### Recursion Tree for n = 3
+
+```mermaid
+flowchart TD
+    A[""] --> B["("]
+
+    B --> C["(("]
+    B --> D["()"]
+
+    C --> E["((("]
+    C --> F["(()"]
+
+    D --> G["()("]
+
+    E --> H["((()"]
+    H --> I["((())"]
+    I --> J["((()))"]
+
+    F --> K["(()("]
+    F --> L["(())"]
+
+    K --> M["(()()"]
+    M --> N["(()())"]
+
+    L --> O["(())("]
+    O --> P["(())()"]
+
+    G --> Q["()(("]
+    G --> R["()()"]
+
+    Q --> S["()(()"]
+    S --> T["()(())"]
+
+    R --> U["()()("]
+    U --> V["()()()"]
+```
+
+### Whiteboard Explanation
+
+If I had to explain Question 2 on a whiteboard, I would break it down into five steps.
+
+#### Step 1: Understand the goal
+
+We need all possible strings made from `n` opening parentheses and `n` closing parentheses.
+
+But not every string is valid.
+
+A valid parentheses string must always stay balanced as it is being built.
+
+#### Step 2: Define the recursive state
+
+At each recursive call, the algorithm tracks:
+
+- `current`
+- `openCount`
+- `closeCount`
+
+This tells us:
+
+- what string has already been built
+- how many opening parentheses have been used
+- how many closing parentheses have been used
+
+#### Step 3: Define the legal choices
+
+At any point, there are only two possible moves:
+
+- add `"("` if there are still opening parentheses left to use
+- add `")"` if closing the string would not make it invalid
+
+That means:
+
+- `openCount < n`
+- `closeCount < openCount`
+
+If a move breaks one of those rules, that branch is not explored.
+
+#### Step 4: Define the base case
+
+Once `current.Length == 2 * n`, the string is complete.
+
+At that point:
+
+- it contains exactly `n` opening parentheses
+- it contains exactly `n` closing parentheses
+- it stayed valid the whole time
+
+So the string is added to the result list.
+
+#### Step 5: Explain backtracking
+
+Backtracking means:
+
+- make one valid choice
+- go deeper into recursion
+- return to the previous state
+- try the next valid choice
+
+This process continues until every valid combination has been generated.
+
+### Mental Model
+
+A simple way to think about this problem is like walking through a maze with rules.
+
+Each step gives two possible directions:
+
+- place an opening parenthesis
+- place a closing parenthesis
+
+But some paths are blocked:
+
+- you cannot use more than `n` opening parentheses
+- you cannot close more parentheses than you have opened
+
+That means the algorithm does not waste time building invalid strings.
+
+### Example Output
+
+```text
+For n = 3:
+((()))
+(()())
+(())()
+()(())
+()()()
+```
+
+---
+
 ## How to Run
 
-1. Open the project in **Visual Studio**.
+### Question 1
+
+1. Open the serialization project in **Visual Studio**.
 2. Build the solution.
 3. Run the program.
 4. View the console output.
-5. Check the generated files in:
-
-```text
-C:\Files
-```
+5. Check the generated files.
 
 Expected files:
 
 - `Players.json`
 - `Players.xml`
+
+### Question 2
+
+1. Open the Generate Parentheses project in **Visual Studio**.
+2. Build the solution.
+3. Run the program.
+4. View the generated combinations in the console output.
 
 ---
 
@@ -251,38 +496,41 @@ Expected files:
 
 ```mermaid
 gitGraph
-   commit id: "Create console project"
-   commit id: "Add Player class"
-   commit id: "Add JSON serialization"
-   commit id: "Add XML serialization"
-   commit id: "Add README documentation"
+   commit id: "Create Assignment 10.1 repo"
+   commit id: "Add Question 1 serialization project"
+   commit id: "Add Question 1 README documentation"
+   commit id: "Add Question 2 LeetCode 22 solution"
+   commit id: "Improve diagrams and whiteboard explanation"
+   commit id: "Push updated repo to GitHub"
 ```
 
 ---
 
 ## What I Learned
 
-This project helped build confidence in:
+This assignment helped build confidence in:
 
 - Creating user-defined classes
 - Working with lists of objects
 - Writing structured data to files
 - Reading stored data back into objects
 - Understanding the differences between JSON and XML
-- Explaining serialization step by step
+- Using recursion to solve algorithmic problems
+- Applying backtracking to generate valid combinations
+- Explaining technical processes step by step
 
 ---
 
 ## Future Improvements
 
-Possible next steps for this project include:
+Possible next steps for this repository include:
 
-- Adding user input instead of hardcoded players
+- Adding input validation to both questions
+- Saving Question 1 files to a relative folder
 - Adding `try/catch` error handling
-- Saving files to a relative folder instead of `C:\Files`
-- Adding menu options for choosing JSON or XML
-- Expanding the player model with more statistics
-- Adding unit tests
+- Allowing user input for Question 2
+- Comparing brute-force and backtracking approaches
+- Adding unit tests for both questions
 
 ---
 
