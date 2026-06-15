@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/ec557ec6-834b-4047-919e-7504efc44b4e.png" alt="Bobby Rovy GitHub README Banner" />
+</p>
+
 # Assignment 10.1 - Serialization and LeetCode 22
 
 > A C# assignment repository that demonstrates object serialization with **JSON** and **XML**, along with a backtracking solution to **LeetCode 22: Generate Parentheses**.
