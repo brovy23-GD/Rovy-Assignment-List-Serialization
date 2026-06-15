@@ -79,7 +79,7 @@ Rovy Assignment List Serialization (Json & XML)/
 
 ---
 
-## Question 1 – Player Serialization
+## Question 1 - Player Serialization
 
 Question 1 focuses on creating a user-defined `Player` class with three properties and demonstrating how object data can be serialized and deserialized using multiple file formats.
 
@@ -243,7 +243,7 @@ Michael Jordan - Chicago Bulls - 33.4
 
 ---
 
-## Question 2 – LeetCode 22: Generate Parentheses
+## Question 2 - LeetCode 22: Generate Parentheses
 
 Question 2 focuses on solving the classic **Generate Parentheses** problem using recursion and backtracking. This is a common interview-style question that tests how well you understand recursive state and pruning invalid paths early.
 
