@@ -51,16 +51,17 @@ It also helped me present coursework in a more professional GitHub-ready format.
 ## Project Structure
 
 ```text
-Assignment-10.1/
+Rovy Assignment List Serialization (Json & XML)/
 ├── README.md
+├── .gitignore
 ├── Question1-Serialization/
 │   ├── Program.cs
 │   ├── Player.cs
 │   └── Question1-Serialization.csproj
 ├── Question2-GenerateParentheses/
-│   ├── Program.cs
-│   └── Question2-GenerateParentheses.csproj
-└── Properties/
+│   └── Program.cs
+├── bin/
+└── obj/
 ```
 
 ---
@@ -74,7 +75,7 @@ Assignment-10.1/
 
 ---
 
-## Question 1 - Player Serialization
+## Question 1 – Player Serialization
 
 Question 1 focuses on creating a user-defined `Player` class with three properties and demonstrating how object data can be serialized and deserialized using multiple file formats.
 
@@ -133,7 +134,7 @@ sequenceDiagram
     Program->>Program: Print final output
 ```
 
-### Whiteboard Explanation
+### Whiteboard Explanation (Question 1)
 
 If I had to explain Question 1 on a whiteboard, I would break it down into four simple steps.
 
@@ -238,9 +239,9 @@ Michael Jordan - Chicago Bulls - 33.4
 
 ---
 
-## Question 2 - LeetCode 22: Generate Parentheses
+## Question 2 – LeetCode 22: Generate Parentheses
 
-Question 2 focuses on solving the classic **Generate Parentheses** problem using recursion and backtracking.
+Question 2 focuses on solving the classic **Generate Parentheses** problem using recursion and backtracking. This is a common interview-style question that tests how well you understand recursive state and pruning invalid paths early.
 
 ### Problem Statement
 
@@ -260,7 +261,7 @@ Input: n = 1
 Output: ["()"]
 ```
 
-### Solution Code
+### Solution Code (core logic)
 
 ```csharp
 using System;
@@ -277,17 +278,21 @@ public class Solution
 
     private void Backtrack(List<string> result, string current, int openCount, int closeCount, int n)
     {
+        // Base case: when the string length reaches 2 * n,
+        // we have used all parentheses and formed a complete combination.
         if (current.Length == 2 * n)
         {
             result.Add(current);
             return;
         }
 
+        // Choice 1: add an opening parenthesis if we still have some left.
         if (openCount < n)
         {
             Backtrack(result, current + "(", openCount + 1, closeCount, n);
         }
 
+        // Choice 2: add a closing parenthesis if it keeps the string valid.
         if (closeCount < openCount)
         {
             Backtrack(result, current + ")", openCount, closeCount + 1, n);
@@ -295,6 +300,8 @@ public class Solution
     }
 }
 ```
+
+The console project in `Question2-GenerateParentheses/Program.cs` wraps this solution in a `Main` method, prints all combinations for a given `n`, and includes beginner-friendly comments.
 
 ### Core Idea
 
@@ -366,7 +373,7 @@ flowchart TD
     U --> V["()()()"]
 ```
 
-### Whiteboard Explanation
+### Whiteboard Explanation (Question 2)
 
 If I had to explain Question 2 on a whiteboard, I would break it down into five steps.
 
@@ -475,7 +482,7 @@ Expected files:
 
 ### Question 2
 
-1. Open the Generate Parentheses project in **Visual Studio**.
+1. Open the Generate Parentheses project in **Visual Studio** (folder: `Question2-GenerateParentheses`).
 2. Build the solution.
 3. Run the program.
 4. View the generated combinations in the console output.
@@ -491,7 +498,7 @@ gitGraph
    commit id: "Add Question 1 README documentation"
    commit id: "Add Question 2 LeetCode 22 solution"
    commit id: "Improve diagrams and whiteboard explanation"
-   commit id: "Push updated repo to GitHub"
+   commit id: "Restructure repo into Question1 and Question2 folders"
 ```
 
 ---
