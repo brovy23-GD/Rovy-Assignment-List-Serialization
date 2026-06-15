@@ -52,9 +52,6 @@ It also helped me present coursework in a more professional GitHub-ready format.
 
 ---
 
-## Project Structure
-
-```text
 Rovy Assignment List Serialization (Json & XML)/
 ├── README.md
 ├── .gitignore
@@ -66,7 +63,6 @@ Rovy Assignment List Serialization (Json & XML)/
 │   └── Program.cs
 ├── bin/
 └── obj/
-```
 
 ---
 
